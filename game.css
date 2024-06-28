@@ -1,0 +1,209 @@
+.mainContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* car's back tyre */
+
+.backtyre {
+    mix-blend-mode: darken;
+    height: 30px;
+    width: 20px;
+    margin-top: -10px;
+}
+
+.tyreMovement1 {
+    animation-name: tyreMovement1;
+    animation-iteration-count: infinite;
+    animation-duration: .2s;
+    animation-fill-mode: both;
+}
+
+
+/* back tyre movement */
+
+@keyframes tyreMovement1 {
+    from {
+        transform: rotateZ(0deg);
+        margin-left: -20px;
+        margin-top: -15px;
+    }
+    to {
+        transform: rotateZ(360deg);
+        margin-left: -20px;
+        margin-top: -15px;
+    }
+}
+
+
+/* car's front tyre */
+
+.fronttyre {
+    mix-blend-mode: darken;
+    height: 30px;
+    width: 20px;
+    margin-top: -10px;
+}
+
+
+/* front tyre movement */
+
+.tyreMovement2 {
+    animation-name: tyreMovement2;
+    animation-iteration-count: infinite;
+    animation-duration: .2s;
+    animation-fill-mode: both;
+}
+
+@keyframes tyreMovement2 {
+    from {
+        transform: rotateZ(0deg);
+        margin-left: 25px;
+        margin-top: -15px;
+    }
+    to {
+        margin-top: -15px;
+        transform: rotateZ(360deg);
+        margin-left: 25px;
+    }
+}
+
+
+/* car movement */
+
+.carMovement {
+    animation-name: carMovement;
+    animation-iteration-count: infinite;
+    animation-duration: .2s;
+    animation-fill-mode: both;
+}
+
+@keyframes carMovement {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(2px);
+    }
+}
+
+
+/*  grass and land */
+
+#greenContainer {
+    height: 100px;
+    background-color: #28a745;
+    position: relative;
+}
+
+#grass {
+    height: 50px;
+    width: 200%;
+    border-top: 5px greenyellow dotted;
+    animation-name: grass;
+    animation-iteration-count: infinite;
+    animation-duration: .2s;
+    animation-fill-mode: both;
+    position: absolute;
+}
+
+@keyframes grass {
+    from {
+        right: 0;
+    }
+    to {
+        left: 0;
+    }
+}
+
+
+/* hurdles */
+
+.hurdle1 {
+    width: 25px;
+    height: 25px;
+    background-color: hotpink;
+    position: absolute;
+    z-index: 2;
+    animation-name: circleHurdle, circleMovement;
+    animation-duration: .4s, 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    font-size: 16px;
+    margin-bottom: 0px;
+    border: 2px solid darkgreen;
+}
+
+@keyframes circleHurdle {
+    from {
+        transform: rotateZ(0deg);
+        margin-top: 35px;
+    }
+    to {
+        transform: rotateZ(-360deg);
+        margin-top: 35px;
+    }
+}
+
+@keyframes circleMovement {
+    from {
+        right: -50px;
+    }
+    to {
+        right: calc(100% + 50px);
+    }
+}
+
+
+/* jump animation */
+
+.jump {
+    animation-name: jump;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    /* border: 2px solid black; */
+    width: max-content;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* score */
+
+.scoreBox {
+    position: absolute;
+    height: 30px;
+    width: 150px;
+    color: white;
+    z-index: 10;
+    right: 0;
+    top: 0;
+}
+
+.highScoreBox {
+    position: absolute;
+    height: 30px;
+    width: 150px;
+    color: white;
+    z-index: 10;
+    right: 0;
+    top: 31px;
+}
+
+#gameOver div {
+    width: max-content;
+    border: 10px red;
+    border-style: dashed;
+}
